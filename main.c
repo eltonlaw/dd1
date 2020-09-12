@@ -8,11 +8,9 @@
 #endif
 
 int main() {
-    // Initialize indicator LED
     DDRB |= (1 << PINB0);
 
     while (1) {
-		// Initialize Direction of Wheels
 		PORTB |= (1 << PINB0);
 		_delay_ms(1000);
 		PORTB &= ~(1 << PINB0);

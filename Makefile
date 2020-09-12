@@ -2,7 +2,6 @@
 
 MCU =
 F_CPU =
-# Might be able to increase from default to program it a bit faster, look at datasheet
 BAUD =
 PORT = /dev/ttyACM0
 
@@ -18,7 +17,6 @@ build:
 	avr-objcopy -R .eeprom -O ihex main.obj main.hex
 
 flash:
-	# avrdude -c programmer_id -p microcontroller -P port --erasable --verbose --upload memtype:op:filename
 	avrdude -c avrispv2 -p m328p -P $(PORT) -e -v -U flash:w:main.hex
 
 clean:
